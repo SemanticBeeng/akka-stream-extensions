@@ -12,7 +12,7 @@ organization in ThisBuild := "com.mfglabs"
 
 name in ThisBuild := "akka-stream-extensions"
 
-scalaVersion in ThisBuild := "2.11.7"
+scalaVersion in ThisBuild := "2.11.8"
 
 publishMavenStyle in ThisBuild := true
 
@@ -29,7 +29,7 @@ resolvers in ThisBuild ++= Seq(
 lazy val commonSettings = Seq(
   scmInfo := Some(ScmInfo(url("https://github.com/MfgLabs/akka-stream-extensions"),
     "git@github.com:MfgLabs/akka-stream-extensions.git")),
-  libraryDependencies += "org.scalatest" %% "scalatest" % "2.1.6" % "test"
+  libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.0" % "test"
 )
 
 lazy val publishSettings = Seq(
@@ -91,7 +91,7 @@ lazy val commons = project.in(file("commons"))
   .settings(
     name := "akka-stream-extensions",
     libraryDependencies ++= Seq(
-      "com.typesafe.akka" %% "akka-stream" % "2.4.2"
+      "com.typesafe.akka" %% "akka-stream" % "2.4.12"
     ),
     commonSettings,
     publishSettings
@@ -103,7 +103,7 @@ lazy val postgres = project.in(file("extensions/postgres"))
     name := "akka-stream-extensions-postgres",
     resolvers += Resolver.bintrayRepo("softprops", "maven"),
     libraryDependencies ++= Seq(
-      "com.typesafe.akka" %% "akka-stream" % "2.4.2",
+      "com.typesafe.akka" %% "akka-stream" % "2.4.12",
       "org.postgresql" % "postgresql"  % "9.3-1102-jdbc4"
     ),
     commonSettings,
@@ -117,8 +117,8 @@ lazy val elasticsearch = project.in(file("extensions/elasticsearch"))
   .settings(
     name := "akka-stream-extensions-elasticsearch",
     libraryDependencies ++= Seq(
-      "com.typesafe.akka" %% "akka-stream" % "2.4.2",
-      "org.elasticsearch" % "elasticsearch" % "1.3.2"
+      "com.typesafe.akka" %% "akka-stream" % "2.4.12",
+      "org.elasticsearch" % "elasticsearch" % "2.4.1"
     ),
     commonSettings,
     publishSettings
@@ -129,8 +129,8 @@ lazy val shapeless = project.in(file("extensions/shapeless"))
  .settings(
    name := "akka-stream-extensions-shapeless",
    libraryDependencies ++= Seq(
-     "com.typesafe.akka" %% "akka-stream" % "2.4.2",
-     "com.chuusai"       %% "shapeless"   % "2.2.0-RC6"
+     "com.typesafe.akka" %% "akka-stream" % "2.4.12",
+     "com.chuusai"       %% "shapeless"   % "2.3.2"
    ),
    commonSettings,
    publishSettings
